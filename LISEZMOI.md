@@ -22,10 +22,10 @@ dans le navigateur (localStorage) restent ainsi séparés d'un éditeur à l'aut
 
 | Tuile | Dossier | Port | Serveur démarré |
 |---|---|---|---|
-| micro:bit | `../easybloc_ts_microbit` | 8098 | `app.py` (bouton « Accueil » déjà dans son `bandeau.js`) |
-| Mode classe | `../easybloc_ts_mode_classe` | 8091 | `app.py` |
-| mBot1 | `../easybloc_ts_mbot1` | 8094 | `app.py` |
-| mBot2 | `../easybloc_ts_mbot2` | 8095 | `app.py` |
+| micro:bit | `../Easybloc_ts_microbit` | 8098 | `app.py` (bouton « Accueil » déjà dans son `bandeau.js`) |
+| Mode classe | `../Easybloc_ts_mode_classe` | 8091 | `app.py` |
+| mBot1 | `../Easybloc_ts_mbot1` | 8094 | `app.py` |
+| mBot2 | `../Easybloc_ts_mbot2` | 8095 | `app.py` |
 | Frise chronologique | `../frise` | 8096 | `python -m http.server` (page `index.html` seule ; bouton « Accueil » dans l'en-tête de la frise) |
 | Résistance des matériaux | `../simulation_rdm` | 8097 | `python -m http.server` (page `index.html` seule ; bouton « Accueil » dans son en-tête) |
 | Fermette | `../comportement-m-canique-d-un-fermette` | 8099 | `python -m http.server` (page `index.html` seule ; bouton « Accueil » en haut à gauche) |
