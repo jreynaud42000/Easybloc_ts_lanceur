@@ -1,4 +1,4 @@
-"""Lanceur des editeurs Blockly (Technologie Services).
+"""Lanceur des editeurs Easybloc (Technologie Services).
 
 Sert la page d'accueil sur http://localhost:8090 et ouvre le navigateur. Un clic sur une tuile demande au lanceur de
 demarrer le serveur du projet choisi, chacun sur son propre port (8091 a 8099), puis la page redirige vers l'editeur.
@@ -409,7 +409,7 @@ if __name__ == "__main__":
 
     navigateur = "--sans-navigateur" not in sys.argv
     url = "http://localhost:%d" % PORT
-    print("Lanceur des éditeurs Blockly (Technologie Services)")
+    print("Lanceur des éditeurs Easybloc (Technologie Services)")
     print("Projets cherchés dans :", DOSSIER_PROJETS)
     try:
         httpd = Serveur(("127.0.0.1", PORT), partial(Handler, directory=PAGE))

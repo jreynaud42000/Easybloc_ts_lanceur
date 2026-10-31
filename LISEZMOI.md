@@ -1,6 +1,6 @@
-# Lanceur des éditeurs Blockly (Technologie Services)
+# Lanceur des éditeurs Easybloc (Technologie Services)
 
-Une page d'accueil propose les 5 éditeurs Blockly. Un clic sur une tuile démarre le serveur local de l'éditeur choisi
+Une page d'accueil propose les 5 éditeurs Easybloc. Un clic sur une tuile démarre le serveur local de l'éditeur choisi
 et l'ouvre dans le navigateur.
 
 ## Lancer

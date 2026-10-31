@@ -1,12 +1,12 @@
 @echo off
-TITLE Lanceur des editeurs Blockly
+TITLE Lanceur des editeurs Easybloc
 color 0A
 
 REM Se placer dans le dossier du .bat : sinon le lanceur ne trouve pas sa page d'accueil.
 cd /d "%~dp0"
 
 echo ========================================================
-echo   LANCEUR DES EDITEURS BLOCKLY (Technologie Services)
+echo   LANCEUR DES EDITEURS EASYBLOC (Technologie Services)
 echo ========================================================
 echo.
 
