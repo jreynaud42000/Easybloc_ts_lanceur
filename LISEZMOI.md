@@ -38,7 +38,7 @@ L'éditeur s'ouvre avec le paramètre `?lanceur=8090` : il peut ainsi afficher u
 
 ## Version en ligne (GitHub Pages)
 
-https://jreynaud42000.github.io/easybloc_ts_lanceur/ : `index.html` à la racine renvoie vers `page/`. Hors du lanceur
+https://jreynaud42000.github.io/Easybloc_ts_lanceur/ : `index.html` à la racine renvoie vers `page/`. Hors du lanceur
 (autre adresse que `localhost`, ou fichier ouvert directement), la page passe en version en ligne : pas de serveur à
 démarrer, les tuiles des éditeurs publiés ouvrent leur site, les autres affichent « Bientôt en ligne ». Liste des
 éditeurs publiés : objet `EN_LIGNE` dans `page/index.html` (les 7 ; en ligne, Mode classe n'est que l'éditeur, sans séance servie par le PC du professeur). Aperçu depuis le lanceur local :
