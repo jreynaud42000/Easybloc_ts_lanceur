@@ -75,10 +75,10 @@ DELAI_DEMARRAGE = 30                                 # s : premier demarrage len
 #   "plateforme" : plateforme/serveur.py (comptes, seances ; port choisi par la variable PLATEFORME_PORT)
 #   "statique"   : page web sans serveur propre (frise, simulateurs RDM et fermette : index.html seul), servie par python -m http.server
 PROJETS = {
-    "microbit":        {"dossier": "blockly_ts_microbit",        "port": 8098, "serveur": "app"},
-    "mode-classe":     {"dossier": "blockly_ts_mode_classe",     "port": 8091, "serveur": "app"},
-    "mbot1":           {"dossier": "blocky_ts_mbot1",            "port": 8094, "serveur": "app"},
-    "mbot2":           {"dossier": "blocky_ts_mbot2",            "port": 8095, "serveur": "app"},
+    "microbit":        {"dossier": "easybloc_ts_microbit",       "port": 8098, "serveur": "app"},
+    "mode-classe":     {"dossier": "easybloc_ts_mode_classe",    "port": 8091, "serveur": "app"},
+    "mbot1":           {"dossier": "easybloc_ts_mbot1",          "port": 8094, "serveur": "app"},
+    "mbot2":           {"dossier": "easybloc_ts_mbot2",          "port": 8095, "serveur": "app"},
     "frise":           {"dossier": "frise",                      "port": 8096, "serveur": "statique"},
     "simulation-rdm":  {"dossier": "simulation_rdm",             "port": 8097, "serveur": "statique"},
     "fermette":        {"dossier": "comportement-m-canique-d-un-fermette", "port": 8099, "serveur": "statique"},
