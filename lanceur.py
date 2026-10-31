@@ -16,7 +16,7 @@ apercu) peut occuper le port d'une tuile.
 Affichage a 80 % : la page d'accueil s'ouvre dans une fenetre dediee d'Edge (ou de Chrome), sans barre d'adresse, avec
 --force-device-scale-factor=0.8. Le zoom CSS dans le code casse le glisser-deposer des blocs Blockly ; ce facteur
 d'echelle, applique par le navigateur, ne gene aucune application. Il ne vaut que pour une instance de navigateur
-demarree avec lui : la fenetre utilise donc son propre profil (%LOCALAPPDATA%\\LanceurBlockly\\profil), separe du
+demarree avec lui : la fenetre utilise donc son propre profil (%LOCALAPPDATA%\\LanceurEasybloc\\profil), separe du
 navigateur habituel (extensions, mots de passe et donnees locales a part).
 
 Options :
@@ -40,7 +40,20 @@ import webbrowser
 from functools import partial
 
 PORT = 8090
-NOM_APPLICATION = "LanceurBlockly"
+NOM_APPLICATION = "LanceurEasybloc"
+
+
+def dossier_local(nom):
+    """Sous-dossier de %LOCALAPPDATA%\\LanceurEasybloc. Nom Easybloc (31 oct. 2026) : l'ancien dossier LanceurBlockly
+    (profil du navigateur, journaux) est deplace une fois ; s'il est occupe, on continue dans l'ancien."""
+    base = os.environ.get("LOCALAPPDATA") or DOSSIER
+    nouveau, ancien = os.path.join(base, "LanceurEasybloc"), os.path.join(base, "LanceurBlockly")
+    if os.path.isdir(ancien) and not os.path.exists(nouveau):
+        try:
+            os.rename(ancien, nouveau)
+        except OSError:
+            return os.path.join(ancien, nom)
+    return os.path.join(nouveau, nom)
 # Application Windows (LanceurTS.exe, construire_exe.py) : la page est dans l'exe (sys._MEIPASS), les projets dans le
 # dossier applications/ a cote de l'exe, et l'exe se relance lui-meme avec --serveur <projet> (pas de Python separe).
 FIGE = getattr(sys, "frozen", False)
@@ -48,7 +61,7 @@ if FIGE:
     DOSSIER = os.path.dirname(sys.executable)
     PAGE = os.path.join(sys._MEIPASS, "page")
     DOSSIER_PROJETS = os.path.join(DOSSIER, "applications")
-    JOURNAUX = os.path.join(os.environ.get("LOCALAPPDATA") or DOSSIER, "LanceurBlockly", "journaux")
+    JOURNAUX = dossier_local("journaux")
 else:
     DOSSIER = os.path.dirname(os.path.abspath(__file__))
     PAGE = os.path.join(DOSSIER, "page")
@@ -352,7 +365,7 @@ def ouvrir_page(url):
     if "--navigateur-habituel" not in sys.argv:
         executable = next((n for n in NAVIGATEURS if os.path.isfile(n)), None)
         if executable:
-            profil = os.path.join(os.environ.get("LOCALAPPDATA") or DOSSIER, "LanceurBlockly", "profil")
+            profil = dossier_local("profil")
             try:
                 subprocess.Popen([executable, "--app=" + url, "--user-data-dir=" + profil,
                                   "--force-device-scale-factor=" + ECHELLE, "--no-first-run", "--no-default-browser-check"],

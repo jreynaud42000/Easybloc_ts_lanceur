@@ -10,7 +10,7 @@ et l'ouvre dans le navigateur.
 - **Affichage à 80 %** : la page s'ouvre dans une fenêtre dédiée d'Edge (ou de Chrome), sans barre d'adresse, avec
   l'option `--force-device-scale-factor=0.8`. Tout y est à 80 %, éditeurs compris, sans modifier leur code (un zoom CSS
   dans le code casse le glisser-déposer des blocs). Cette fenêtre a son propre profil
-  (`%LOCALAPPDATA%\LanceurBlockly\profil`) : extensions, mots de passe et programmes enregistrés dans le navigateur y
+  (`%LOCALAPPDATA%\LanceurEasybloc\profil`) : extensions, mots de passe et programmes enregistrés dans le navigateur y
   sont séparés de ceux du navigateur habituel. `python lanceur.py --navigateur-habituel` ouvre le navigateur par défaut,
   à 100 %. La version en ligne n'est pas concernée.
 - Python 3.8 ou plus récent, bibliothèque standard uniquement.
@@ -22,10 +22,10 @@ dans le navigateur (localStorage) restent ainsi séparés d'un éditeur à l'aut
 
 | Tuile | Dossier | Port | Serveur démarré |
 |---|---|---|---|
-| micro:bit | `../blockly_ts_microbit` | 8098 | `app.py` (bouton « Accueil » déjà dans son `bandeau.js`) |
-| Mode classe | `../blockly_ts_mode_classe` | 8091 | `app.py` |
-| mBot1 | `../blocky_ts_mbot1` | 8094 | `app.py` |
-| mBot2 | `../blocky_ts_mbot2` | 8095 | `app.py` |
+| micro:bit | `../easybloc_ts_microbit` | 8098 | `app.py` (bouton « Accueil » déjà dans son `bandeau.js`) |
+| Mode classe | `../easybloc_ts_mode_classe` | 8091 | `app.py` |
+| mBot1 | `../easybloc_ts_mbot1` | 8094 | `app.py` |
+| mBot2 | `../easybloc_ts_mbot2` | 8095 | `app.py` |
 | Frise chronologique | `../frise` | 8096 | `python -m http.server` (page `index.html` seule ; bouton « Accueil » dans l'en-tête de la frise) |
 | Résistance des matériaux | `../simulation_rdm` | 8097 | `python -m http.server` (page `index.html` seule ; bouton « Accueil » dans son en-tête) |
 | Fermette | `../comportement-m-canique-d-un-fermette` | 8099 | `python -m http.server` (page `index.html` seule ; bouton « Accueil » en haut à gauche) |
@@ -38,7 +38,7 @@ L'éditeur s'ouvre avec le paramètre `?lanceur=8090` : il peut ainsi afficher u
 
 ## Version en ligne (GitHub Pages)
 
-https://jreynaud42000.github.io/blockly_ts_lanceur/ : `index.html` à la racine renvoie vers `page/`. Hors du lanceur
+https://jreynaud42000.github.io/easybloc_ts_lanceur/ : `index.html` à la racine renvoie vers `page/`. Hors du lanceur
 (autre adresse que `localhost`, ou fichier ouvert directement), la page passe en version en ligne : pas de serveur à
 démarrer, les tuiles des éditeurs publiés ouvrent leur site, les autres affichent « Bientôt en ligne ». Liste des
 éditeurs publiés : objet `EN_LIGNE` dans `page/index.html` (les 7 ; en ligne, Mode classe n'est que l'éditeur, sans séance servie par le PC du professeur). Aperçu depuis le lanceur local :
@@ -56,7 +56,7 @@ Python n'est pas nécessaire sur le poste : copier le dossier entier, puis doubl
   le dossier où se trouve l'application.
 - Simulateur RDM hors ligne : `ressources/three/` (Three.js r128 et OrbitControls, licence MIT) remplace les adresses
   Internet dans la copie ; le projet `simulation_rdm` n'est pas modifié.
-- Journaux : `%LOCALAPPDATA%\LanceurBlockly\journaux`.
+- Journaux : `%LOCALAPPDATA%\LanceurEasybloc\journaux`.
 - Exe non signé : au premier lancement, Windows SmartScreen demande « Informations complémentaires » puis « Exécuter
   quand même ». Mode classe sert les postes de la salle : le pare-feu demande une autorisation.
 - À reconstruire après toute modification d'un projet ou du lanceur.
@@ -76,9 +76,9 @@ Python n'est pas nécessaire sur le poste : copier le dossier entier, puis doubl
 
 ## Images
 
-- `page/logo_ts.png` : copié de `blockly_ts_mode_classe`.
+- `page/logo_ts.png` : copié de `easybloc_ts_mode_classe`.
 - `page/favicon.png` : icône d'onglet (64 × 64 px), hexagone « TS » découpé dans `logo_ts.png`.
-- `page/images/mbot1.png` : copié de `blocky_ts_mbot1`.
-- `page/images/maqueenlite.png` : copié de `blockly_ts_mode_classe` (non utilisé pour l'instant).
+- `page/images/mbot1.png` : copié de `easybloc_ts_mbot1`.
+- `page/images/maqueenlite.png` : copié de `easybloc_ts_mode_classe` (non utilisé pour l'instant).
 - `page/images/mbot2.png` : photo du mBot2 fournie par l'utilisateur, détourée (fond transparent).
 - Cartes à DEL (micro:bit), frise et poutre (simulateur) : illustrations SVG originales dessinées dans la page.

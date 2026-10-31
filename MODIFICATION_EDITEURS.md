@@ -35,7 +35,7 @@ texte de `app.py`). Dès qu'un `app.py` contient `--port`, le lanceur l'appelle 
 Dans le bloc `if __name__ == "__main__":`, juste avant `httpd = None` :
 
 ```python
-    # Options du lanceur (blockly_ts_lanceur) : --port N impose ce port (sans essayer les suivants),
+    # Options du lanceur (easybloc_ts_lanceur) : --port N impose ce port (sans essayer les suivants),
     # --sans-navigateur n'ouvre pas le navigateur (le lanceur redirige lui-meme sa page vers l'editeur).
     PORT_IMPOSE = "--port" in sys.argv
     if PORT_IMPOSE:
