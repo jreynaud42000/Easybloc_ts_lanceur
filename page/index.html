@@ -13,12 +13,13 @@
     } catch (e) {}
   </script>
   <style>
-    /* Charte Technologie Services : bandeau orange #ff5501 (clair), #d94700 (sombre).
+    /* Charte Educatech, comme les editeurs (micro:bit, 31 oct. 2026) : bandeau en degrade vert d'eau #1f9e8f vers
+       violet #6a2c91, filet magenta #e0218a, logo sans pastille ; theme sombre bleu nuit (#0c1030, panneaux #171c47).
        Une couleur par famille : sarcelle pour la carte micro:bit, bleu pour les robots mBot. */
     :root {
       --font: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
-      --bandeau: #ff5501;
-      --accent: #ff5501;
+      --bandeau: linear-gradient(90deg, #1f9e8f, #6a2c91);
+      --accent: #6a2c91;
       --fond-page: #f6f4f1;
       --fond-carte: #ffffff;
       --texte: #1f2328;
@@ -42,13 +43,13 @@
     }
     @media (prefers-color-scheme: dark) {
       :root:not([data-theme="light"]) {
-        --bandeau: #d94700;
-        --accent: #ff7a33;
-        --fond-page: #15171b;
-        --fond-carte: #1f2228;
+        --bandeau: linear-gradient(90deg, #1f9e8f, #6a2c91);
+        --accent: #e0218a;
+        --fond-page: #0c1030;
+        --fond-carte: #171c47;
         --texte: #eceef1;
-        --texte-doux: #a3a9b2;
-        --bordure: #30343b;
+        --texte-doux: #aab0d6;
+        --bordure: #2c3577;
         --ombre: 0 1px 2px rgba(0,0,0,.3), 0 4px 14px rgba(0,0,0,.25);
         --ombre-survol: 0 2px 4px rgba(0,0,0,.35), 0 14px 32px rgba(0,0,0,.45);
         --microbit: #3cc7b4;
@@ -67,13 +68,13 @@
       }
     }
     :root[data-theme="dark"] {
-      --bandeau: #d94700;
-      --accent: #ff7a33;
-      --fond-page: #15171b;
-      --fond-carte: #1f2228;
+      --bandeau: linear-gradient(90deg, #1f9e8f, #6a2c91);
+      --accent: #e0218a;
+      --fond-page: #0c1030;
+      --fond-carte: #171c47;
       --texte: #eceef1;
-      --texte-doux: #a3a9b2;
-      --bordure: #30343b;
+      --texte-doux: #aab0d6;
+      --bordure: #2c3577;
       --ombre: 0 1px 2px rgba(0,0,0,.3), 0 4px 14px rgba(0,0,0,.25);
       --ombre-survol: 0 2px 4px rgba(0,0,0,.35), 0 14px 32px rgba(0,0,0,.45);
       --microbit: #3cc7b4;
@@ -98,10 +99,9 @@
     :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 
     /* Bandeau */
-    header { background: var(--bandeau); color: #fff; box-shadow: 0 2px 6px rgba(0,0,0,.2); }
+    header { background: var(--bandeau); color: #fff; border-bottom: 3px solid #e0218a; box-shadow: 0 2px 6px rgba(0,0,0,.2); }
     .bandeau { max-width: 1280px; margin: 0 auto; padding: 10px 16px; display: flex; align-items: center; gap: 14px; }
-    .logo { display: flex; align-items: center; padding: 4px 8px; background: #fff; border-radius: 6px;
-      box-shadow: inset 0 0 0 1px rgba(0,0,0,.12); flex-shrink: 0; }
+    .logo { display: flex; align-items: center; flex-shrink: 0; }   /* sans pastille, comme dans les editeurs */
     .logo img { height: 30px; width: auto; display: block; }
     /* Blanc sur l'orange de la charte : 3,2:1 seulement, donc texte en gras d'au moins 18,66 px (« grand texte »
        WCAG, seuil 3:1). Le bouton Theme, plus petit, passe en pastille blanche a texte fonce, comme le logo. */
