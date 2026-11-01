@@ -14,7 +14,7 @@
   </script>
   <style>
     /* Charte Educatech, comme les editeurs (micro:bit, 31 oct. 2026) : bandeau en degrade vert d'eau #1f9e8f vers
-       violet #6a2c91, filet magenta #e0218a, logo sans pastille ; theme sombre bleu nuit (#0c1030, panneaux #171c47).
+       violet #6a2c91, sans filet (retire le 1er nov. 2026, comme les editeurs), logo sans pastille ; theme sombre bleu nuit (#0c1030, panneaux #171c47).
        Une couleur par famille : sarcelle pour la carte micro:bit, bleu pour les robots mBot. */
     :root {
       --font: 'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
@@ -99,7 +99,7 @@
     :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 
     /* Bandeau */
-    header { background: var(--bandeau); color: #fff; border-bottom: 3px solid #e0218a; box-shadow: 0 2px 6px rgba(0,0,0,.2); }
+    header { background: var(--bandeau); color: #fff; box-shadow: 0 2px 6px rgba(0,0,0,.2); }
     .bandeau { max-width: 1280px; margin: 0 auto; padding: 10px 16px; display: flex; align-items: center; gap: 14px; }
     .logo { display: flex; align-items: center; flex-shrink: 0; }   /* sans pastille, comme dans les editeurs */
     .logo img { height: 30px; width: auto; display: block; }
